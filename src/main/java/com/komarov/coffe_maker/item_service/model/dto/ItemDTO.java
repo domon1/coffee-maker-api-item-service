@@ -9,17 +9,15 @@ public record ItemDTO(
         String name,
         String description,
         BigDecimal price,
-        String imageUrl,
-        String category
-        ) {
-    public ItemDTO(Item item){
-        this(
+        String imageUrl
+) {
+    public static ItemDTO from(Item item) {
+        return new ItemDTO(
                 item.getId(),
                 item.getName(),
                 item.getDescription(),
                 item.getPrice(),
-                item.getImageUrl(),
-                item.getCategory().getName()
+                item.getImageUrl()
         );
     }
 }

@@ -6,12 +6,11 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
-@Entity
 @Getter
 @Setter
-public class Item implements Serializable {
+@Entity
+public class Subcategory implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -21,20 +20,4 @@ public class Item implements Serializable {
 
     @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
-    private String description;
-
-    @Column(nullable = false)
-    private BigDecimal price;
-
-    @Column(nullable = false)
-    private String imageUrl;
-
-    @Column(nullable = false)
-    private Long typeId;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
 }
